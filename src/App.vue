@@ -3,21 +3,36 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
+  {{test}}AA
+  <button @click="toggleDark()">
+    Is Dark: {{ isDark }}
+  </button>
   <router-view />
 </template>
-<script lang="ts">
+<script setup lang="ts">
 import { Vue } from "vue-class-component";
-import DeviceDetector from "device-detector-js"
+import {useDark, useMouse, useToggle} from '@vueuse/core';
+import DeviceDetector from "device-detector-js";
+import {onMounted, Ref, ref} from "vue";
 
-export default class App extends Vue {
-  test = "";
-
-  mounted() {
-    const detector = new DeviceDetector();
-    console.log(detector.parse(navigator.userAgent))
-    this.test = "asdf";
-  }
+interface Test {
+  a: string;
+  b: string;
 }
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+const { x, y } = useMouse()
+
+const test = ref("asfasfa")
+const zebi = ref<Test | null>(null);
+
+
+onMounted(() => {
+  console.log('mounted!')
+  console.log(zebi.value)
+  test.value = "111";
+})
 </script>
 <style lang="scss">
 #app {
