@@ -1,13 +1,13 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  {{test}}AA
-  <button @click="toggleDark()">
-    Is Dark: {{ isDark }}
-  </button>
-  <router-view />
+<!--  <nav>-->
+<!--    <router-link to="/">Home</router-link> |-->
+<!--    <router-link to="/about">About</router-link>-->
+<!--  </nav>-->
+<!--  {{test}}AA-->
+<!--  <button @click="toggleDark()">-->
+<!--    Is Dark: {{ isDark }}-->
+<!--  </button>-->
+    <router-view />
 </template>
 <script setup lang="ts">
 import { Vue } from "vue-class-component";
@@ -29,8 +29,7 @@ const zebi = ref<Test | null>(null);
 
 
 onMounted(() => {
-  console.log('mounted!')
-  console.log(zebi.value)
+  // console.log(zebi.value)
   test.value = "111";
 })
 </script>

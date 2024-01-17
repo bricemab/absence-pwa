@@ -5,4 +5,8 @@ export const Permissions = {
     userLoggedIn: "specialState.userLoggedIn",
     userLoggedOff: "specialState.userLoggedOff"
   },
+
+  qrCodeManager: {
+    refresh: "qrCodeManager.refresh"
+  }
 }
