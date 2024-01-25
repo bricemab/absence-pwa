@@ -3,8 +3,12 @@ import RequestManager from "@/utils/RequestManager";
 import config from "@/config/config";
 import * as CryptoJS from "crypto-js";
 import qs from "qs";
+import {set} from "@vueuse/core";
 
 export default {
+  awaitTimeout: async (time: number) => {
+    return new Promise(resolve => {setTimeout(resolve, time);})
+  },
   isPwaInsalled: () => {
     // @ts-ignore
     return (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true);

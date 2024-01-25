@@ -1,8 +1,8 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   pwa: {
-    name: "Absences Test",
-    themeColor: "#ffd100"
+    name: "Module absences",
+    themeColor: "#ffffff"
   },
   transpileDependencies: true,
   productionSourceMap: false,

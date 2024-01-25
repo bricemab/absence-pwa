@@ -1,19 +1,16 @@
 <template>
-<!--  <nav>-->
-<!--    <router-link to="/">Home</router-link> |-->
-<!--    <router-link to="/about">About</router-link>-->
-<!--  </nav>-->
-<!--  {{test}}AA-->
-<!--  <button @click="toggleDark()">-->
-<!--    Is Dark: {{ isDark }}-->
-<!--  </button>-->
-    <router-view />
+  <div class="register">
+    <div class="overlay">
+      <router-view/>
+    </div>
+  </div>
+  <PortraitRequired/>
 </template>
 <script setup lang="ts">
-import { Vue } from "vue-class-component";
 import {useDark, useMouse, useToggle} from '@vueuse/core';
 import DeviceDetector from "device-detector-js";
 import {onMounted, Ref, ref} from "vue";
+import PortraitRequired from "@/views/pages/no-layout/PortraitRequired.vue";
 
 interface Test {
   a: string;
@@ -22,11 +19,10 @@ interface Test {
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const { x, y } = useMouse()
+const {x, y} = useMouse()
 
 const test = ref("asfasfa")
 const zebi = ref<Test | null>(null);
-
 
 onMounted(() => {
   // console.log(zebi.value)
@@ -34,24 +30,32 @@ onMounted(() => {
 })
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  min-width: 0;
+  font: inherit;
 }
 
-nav {
-  padding: 30px;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+img, video, svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  background: white;
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 </style>

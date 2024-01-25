@@ -3,6 +3,8 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import "./assets/styles/tailwind.css"
+import "./assets/styles/style.css"
 
 const token = localStorage.getItem("token");
 if (token) {

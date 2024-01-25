@@ -29,6 +29,7 @@ const routes: Array<RouteRecordRaw> = [
         children: [
           {
             path: "/",
+            name: "index",
             component: IndexPage,
             meta: {
               permission: Permissions.specialState.userLoggedIn

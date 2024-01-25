@@ -5,7 +5,8 @@ export enum GeneralErrors {
 }
 
 export enum UserErrors {
-  LOGIN_ALREADY_EXIST = "LOGIN_ALREADY_EXIST"
+  LOGIN_ALREADY_EXIST = "LOGIN_ALREADY_EXIST",
+  KEY_NO_MATCH = "KEY_NO_MATCH"
 }
 
 export enum AuthenticationErrors {
